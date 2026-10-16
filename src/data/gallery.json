@@ -1,0 +1,2492 @@
+[
+{
+"id": "mask-market__daylight",
+"segment": "mask-market",
+"look": "daylight",
+"condition": "object masks + skeletons",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "mask-cliff__stormlight",
+"segment": "mask-cliff",
+"look": "stormlight",
+"condition": "object masks + skeletons",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "mask-cliff__papercut",
+"segment": "mask-cliff",
+"look": "papercut",
+"condition": "object masks + skeletons",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"stylized"
+]
+},
+{
+"id": "sem-crossing__daylight",
+"segment": "sem-crossing",
+"look": "daylight",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "sem-crossing__nightrain",
+"segment": "sem-crossing",
+"look": "nightrain",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person",
+"night"
+]
+},
+{
+"id": "sem-suburb__daylight",
+"segment": "sem-suburb",
+"look": "daylight",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "sem-suburb__autumngold",
+"segment": "sem-suburb",
+"look": "autumngold",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "sem-highway__daylight",
+"segment": "sem-highway",
+"look": "daylight",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"fast camera"
+]
+},
+{
+"id": "sem-highway__nightrain",
+"segment": "sem-highway",
+"look": "nightrain",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"fast camera",
+"night"
+]
+},
+{
+"id": "sem-highway__synthwave",
+"segment": "sem-highway",
+"look": "synthwave",
+"condition": "semantic segmentation",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"fast camera",
+"stylized",
+"night"
+]
+},
+{
+"id": "nd-beach__daylight",
+"segment": "nd-beach",
+"look": "daylight",
+"condition": "near-field shaded geometry",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "nd-beach__sunset",
+"segment": "nd-beach",
+"look": "sunset",
+"condition": "near-field shaded geometry",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "nd-beach__claymation",
+"segment": "nd-beach",
+"look": "claymation",
+"condition": "near-field shaded geometry",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "nd-alley__nightrain",
+"segment": "nd-alley",
+"look": "nightrain",
+"condition": "near-field shaded geometry",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "nd-alley__anime",
+"segment": "nd-alley",
+"look": "anime",
+"condition": "near-field shaded geometry",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "src4-master-sword__remaster",
+"segment": "src4-master-sword",
+"look": "remaster",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src4-master-sword__goldenhour",
+"segment": "src4-master-sword",
+"look": "goldenhour",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src4-master-sword__moonlit",
+"segment": "src4-master-sword",
+"look": "moonlit",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "src4-master-sword__ghibli",
+"segment": "src4-master-sword",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"stylized"
+]
+},
+{
+"id": "src2-broom-swing__knight",
+"segment": "src2-broom-swing",
+"look": "knight",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src2-broom-swing__samurai",
+"segment": "src2-broom-swing",
+"look": "samurai",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src2-broom-swing__scifi",
+"segment": "src2-broom-swing",
+"look": "scifi",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src2-broom-swing__anime",
+"segment": "src2-broom-swing",
+"look": "anime",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"stylized"
+]
+},
+{
+"id": "src2-broom-swing__viking",
+"segment": "src2-broom-swing",
+"look": "viking",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src2-hero-skeleton__ember",
+"segment": "src2-hero-skeleton",
+"look": "ember",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"multi-person",
+"night"
+]
+},
+{
+"id": "src2-hero-skeleton__ghibli",
+"segment": "src2-hero-skeleton",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"multi-person",
+"stylized"
+]
+},
+{
+"id": "src2-hero-castle-gate__moonlit",
+"segment": "src2-hero-castle-gate",
+"look": "moonlit",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"stylized",
+"night"
+]
+},
+{
+"id": "src2-hero-castle-gate__remaster",
+"segment": "src2-hero-castle-gate",
+"look": "remaster",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "src2-hero-castle-gate__ghibli",
+"segment": "src2-hero-castle-gate",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"stylized"
+]
+},
+{
+"id": "src2-pirate-storm__photoreal",
+"segment": "src2-pirate-storm",
+"look": "photoreal",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera"
+]
+},
+{
+"id": "src2-pirate-storm__ghibli",
+"segment": "src2-pirate-storm",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera",
+"stylized"
+]
+},
+{
+"id": "src2-pirate-storm__ghostship",
+"segment": "src2-pirate-storm",
+"look": "ghostship",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera"
+]
+},
+{
+"id": "src2-pirate-storm__arctic",
+"segment": "src2-pirate-storm",
+"look": "arctic",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera"
+]
+},
+{
+"id": "src2-pirate-storm__golden",
+"segment": "src2-pirate-storm",
+"look": "golden",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera",
+"night"
+]
+},
+{
+"id": "src2-creature-adventure__photoreal",
+"segment": "src2-creature-adventure",
+"look": "photoreal",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-creature-adventure__ghibli",
+"segment": "src2-creature-adventure",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "src2-creature-adventure__autumn",
+"segment": "src2-creature-adventure",
+"look": "autumn",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-creature-adventure__snow",
+"segment": "src2-creature-adventure",
+"look": "snow",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-creature-adventure__glowforest",
+"segment": "src2-creature-adventure",
+"look": "glowforest",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-hero-horse__remaster",
+"segment": "src2-hero-horse",
+"look": "remaster",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-hero-horse__ghibli",
+"segment": "src2-hero-horse",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"stylized"
+]
+},
+{
+"id": "src2-hero-horse__goldenhour",
+"segment": "src2-hero-horse",
+"look": "goldenhour",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-hero-horse__moonlit",
+"segment": "src2-hero-horse",
+"look": "moonlit",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"night"
+]
+},
+{
+"id": "src2-hero-horse__autumn",
+"segment": "src2-hero-horse",
+"look": "autumn",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-retro-fps__aaa",
+"segment": "src2-retro-fps",
+"look": "aaa",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-retro-fps__cyberpunk",
+"segment": "src2-retro-fps",
+"look": "cyberpunk",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"night"
+]
+},
+{
+"id": "src2-retro-fps__alienhive",
+"segment": "src2-retro-fps",
+"look": "alienhive",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-retro-fps__dungeon",
+"segment": "src2-retro-fps",
+"look": "dungeon",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-retro-fps__bunker",
+"segment": "src2-retro-fps",
+"look": "bunker",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-dragon-castle__photoreal",
+"segment": "src2-dragon-castle",
+"look": "photoreal",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-dragon-castle__ice",
+"segment": "src2-dragon-castle",
+"look": "ice",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src2-dragon-castle__nightstorm",
+"segment": "src2-dragon-castle",
+"look": "nightstorm",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"night"
+]
+},
+{
+"id": "src2-hero-ocarina__remaster",
+"segment": "src2-hero-ocarina",
+"look": "remaster",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-hero-ocarina__ghibli",
+"segment": "src2-hero-ocarina",
+"look": "ghibli",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "src2-hero-ocarina__goldenhour",
+"segment": "src2-hero-ocarina",
+"look": "goldenhour",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": []
+},
+{
+"id": "src2-hero-ocarina__autumn",
+"segment": "src2-hero-ocarina",
+"look": "autumn",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "src2-hero-ocarina__moonlit",
+"segment": "src2-hero-ocarina",
+"look": "moonlit",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "src2-group-dance__cyberpunk",
+"segment": "src2-group-dance",
+"look": "cyberpunk",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"multi-person",
+"night"
+]
+},
+{
+"id": "src2-group-dance__winter",
+"segment": "src2-group-dance",
+"look": "winter",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"multi-person"
+]
+},
+{
+"id": "src-steam-train__photoreal",
+"segment": "src-steam-train",
+"look": "photoreal",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera",
+"stylized"
+]
+},
+{
+"id": "src-steam-train__nightsnow",
+"segment": "src-steam-train",
+"look": "nightsnow",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"fast camera",
+"night"
+]
+},
+{
+"id": "oasis-door__fantasy",
+"segment": "oasis-door",
+"look": "fantasy",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-door__scifi",
+"segment": "oasis-door",
+"look": "scifi",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-door__western",
+"segment": "oasis-door",
+"look": "western",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "oasis-door__cyberpunk",
+"segment": "oasis-door",
+"look": "cyberpunk",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "oasis-door__underwater",
+"segment": "oasis-door",
+"look": "underwater",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-door__candyland",
+"segment": "oasis-door",
+"look": "candyland",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "r98-field__remaster",
+"segment": "r98-field",
+"look": "remaster",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-field__ghibli",
+"segment": "r98-field",
+"look": "ghibli",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "r98-field__moonlit",
+"segment": "r98-field",
+"look": "moonlit",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "r98-field__goldenhour",
+"segment": "r98-field",
+"look": "goldenhour",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-street__cyberpunk",
+"segment": "oasis-street",
+"look": "cyberpunk",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "oasis-street__revolution",
+"segment": "oasis-street",
+"look": "revolution",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-street__westerntown",
+"segment": "oasis-street",
+"look": "westerntown",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-street__modernla",
+"segment": "oasis-street",
+"look": "modernla",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-street__medieval",
+"segment": "oasis-street",
+"look": "medieval",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "oasis-street__noir",
+"segment": "oasis-street",
+"look": "noir",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized",
+"night"
+]
+},
+{
+"id": "oasis-street__postapoc",
+"segment": "oasis-street",
+"look": "postapoc",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-forest__remaster",
+"segment": "r98-forest",
+"look": "remaster",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-forest__ghibli",
+"segment": "r98-forest",
+"look": "ghibli",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "r98-forest__goldenhour",
+"segment": "r98-forest",
+"look": "goldenhour",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-forest__moonlit",
+"segment": "r98-forest",
+"look": "moonlit",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "src-neon-bike__photoreal",
+"segment": "src-neon-bike",
+"look": "photoreal",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"night"
+]
+},
+{
+"id": "src-neon-bike__desertday",
+"segment": "src-neon-bike",
+"look": "desertday",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "src-neon-bike__synthwave",
+"segment": "src-neon-bike",
+"look": "synthwave",
+"condition": "near-field shaded geometry",
+"origin": "estimated from a generated video",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"night"
+]
+},
+{
+"id": "mech-canal__occupied",
+"segment": "mech-canal",
+"look": "occupied",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "mech-canal__duskruins",
+"segment": "mech-canal",
+"look": "duskruins",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "mech-canal__snow",
+"segment": "mech-canal",
+"look": "snow",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "mech-canal__comicink",
+"segment": "mech-canal",
+"look": "comicink",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized",
+"night"
+]
+},
+{
+"id": "mech-canal__cleanfuture",
+"segment": "mech-canal",
+"look": "cleanfuture",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "gb-harbor__photoreal",
+"segment": "gb-harbor",
+"look": "photoreal",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "gb-harbor__rainnight",
+"segment": "gb-harbor",
+"look": "rainnight",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "gb-harbor__claymation",
+"segment": "gb-harbor",
+"look": "claymation",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "gb-castle__photoreal",
+"segment": "gb-castle",
+"look": "photoreal",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "gb-castle__snowdusk",
+"segment": "gb-castle",
+"look": "snowdusk",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "gb-castle__oilpainting",
+"segment": "gb-castle",
+"look": "oilpainting",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"multi-person",
+"stylized"
+]
+},
+{
+"id": "gb-canyon-bike__watercolor",
+"segment": "gb-canyon-bike",
+"look": "watercolor",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"stylized"
+]
+},
+{
+"id": "carla-rainy-downtown-high-0-sem__cyberpunk",
+"segment": "carla-rainy-downtown-high-0-sem",
+"look": "cyberpunk",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person",
+"night"
+]
+},
+{
+"id": "carla-rainy-downtown-high-0-sem__snow",
+"segment": "carla-rainy-downtown-high-0-sem",
+"look": "snow",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "carla-rainy-downtown-high-0-sem__1980s",
+"segment": "carla-rainy-downtown-high-0-sem",
+"look": "1980s",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "smpl-trailer-combo__knight",
+"segment": "smpl-trailer-combo",
+"look": "knight",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "smpl-trailer-combo__spacemarine",
+"segment": "smpl-trailer-combo",
+"look": "spacemarine",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "smpl-trailer-combo__cyberninja",
+"segment": "smpl-trailer-combo",
+"look": "cyberninja",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "smpl-trailer-combo__samurai",
+"segment": "smpl-trailer-combo",
+"look": "samurai",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "smpl-trailer-combo__wuxia",
+"segment": "smpl-trailer-combo",
+"look": "wuxia",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "gb-rooftop__photoreal",
+"segment": "gb-rooftop",
+"look": "photoreal",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "gb-rooftop__goldenhour",
+"segment": "gb-rooftop",
+"look": "goldenhour",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "gb-rooftop__anime",
+"segment": "gb-rooftop",
+"look": "anime",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera",
+"stylized"
+]
+},
+{
+"id": "carla-campus-walk-1-sem__snow",
+"segment": "carla-campus-walk-1-sem",
+"look": "snow",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "carla-campus-walk-1-sem__tokyo",
+"segment": "carla-campus-walk-1-sem",
+"look": "tokyo",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person"
+]
+},
+{
+"id": "carla-campus-walk-1-sem__cyberpunk",
+"segment": "carla-campus-walk-1-sem",
+"look": "cyberpunk",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"multi-person",
+"night"
+]
+},
+{
+"id": "carla-neon-night-chase-0-sem__photoreal",
+"segment": "carla-neon-night-chase-0-sem",
+"look": "photoreal",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"fast camera",
+"multi-person",
+"night"
+]
+},
+{
+"id": "carla-neon-night-chase-0-sem__cyberpunk",
+"segment": "carla-neon-night-chase-0-sem",
+"look": "cyberpunk",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"fast camera",
+"multi-person",
+"night"
+]
+},
+{
+"id": "carla-neon-night-chase-0-sem__snow",
+"segment": "carla-neon-night-chase-0-sem",
+"look": "snow",
+"condition": "semantic segmentation",
+"origin": "CARLA engine export",
+"seen": true,
+"tags": [
+"fast camera",
+"multi-person",
+"night"
+]
+},
+{
+"id": "smpl-one-motion__fantasy",
+"segment": "smpl-one-motion",
+"look": "fantasy",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "smpl-one-motion__mars",
+"segment": "smpl-one-motion",
+"look": "mars",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion"
+]
+},
+{
+"id": "smpl-one-motion__arctic",
+"segment": "smpl-one-motion",
+"look": "arctic",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "smpl-one-motion__neontokyo",
+"segment": "smpl-one-motion",
+"look": "neontokyo",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion",
+"night"
+]
+},
+{
+"id": "smpl-one-motion__watercolor",
+"segment": "smpl-one-motion",
+"look": "watercolor",
+"condition": "SMPL body mesh",
+"origin": "fitted SMPL motion",
+"seen": true,
+"tags": [
+"large motion",
+"stylized",
+"night"
+]
+},
+{
+"id": "brick-reveal__lego",
+"segment": "brick-reveal",
+"look": "lego",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "mech-plaza__comicink",
+"segment": "mech-plaza",
+"look": "comicink",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "mech-plaza__snow",
+"segment": "mech-plaza",
+"look": "snow",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "mech-plaza__duskruins",
+"segment": "mech-plaza",
+"look": "duskruins",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-reveal__ghibli",
+"segment": "r98-reveal",
+"look": "ghibli",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"stylized"
+]
+},
+{
+"id": "r98-reveal__goldenhour",
+"segment": "r98-reveal",
+"look": "goldenhour",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": []
+},
+{
+"id": "r98-reveal__moonlit",
+"segment": "r98-reveal",
+"look": "moonlit",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"night"
+]
+},
+{
+"id": "mat_leap__altair",
+"segment": "mat_leap",
+"look": "altair",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__ezio",
+"segment": "mat_leap",
+"look": "ezio",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__connor",
+"segment": "mat_leap",
+"look": "connor",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__edward",
+"segment": "mat_leap",
+"look": "edward",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__arno",
+"segment": "mat_leap",
+"look": "arno",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__bayek",
+"segment": "mat_leap",
+"look": "bayek",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__eivor",
+"segment": "mat_leap",
+"look": "eivor",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "mat_leap__naoe",
+"segment": "mat_leap",
+"look": "naoe",
+"condition": "scene grey box",
+"origin": "built by our agent",
+"seen": true,
+"tags": [
+"large motion",
+"fast camera"
+]
+},
+{
+"id": "dmc-crowd__temple",
+"segment": "dmc-crowd",
+"look": "temple",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "dmc-crowd__anime",
+"segment": "dmc-crowd",
+"look": "anime",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "dmc-crowd__ink",
+"segment": "dmc-crowd",
+"look": "ink",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "dmc-pekgwaa__temple",
+"segment": "dmc-pekgwaa",
+"look": "temple",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"unseen condition"
+]
+},
+{
+"id": "dmc-doubledragon__anime",
+"segment": "dmc-doubledragon",
+"look": "anime",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "dmc-daaihung__ink",
+"segment": "dmc-daaihung",
+"look": "ink",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_pointcloud__indiana",
+"segment": "mat_pointcloud",
+"look": "indiana",
+"condition": "point cloud",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_pointcloud__tombraider",
+"segment": "mat_pointcloud",
+"look": "tombraider",
+"condition": "point cloud",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"unseen condition"
+]
+},
+{
+"id": "mat_pointcloud__angkor",
+"segment": "mat_pointcloud",
+"look": "angkor",
+"condition": "point cloud",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_pointcloud__alien",
+"segment": "mat_pointcloud",
+"look": "alien",
+"condition": "point cloud",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"unseen condition"
+]
+},
+{
+"id": "mat_pointcloud__claymation",
+"segment": "mat_pointcloud",
+"look": "claymation",
+"condition": "point cloud",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__kpop",
+"segment": "mat_pose2d",
+"look": "kpop",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__bollywood",
+"segment": "mat_pose2d",
+"look": "bollywood",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__disco",
+"segment": "mat_pose2d",
+"look": "disco",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__ballet",
+"segment": "mat_pose2d",
+"look": "ballet",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__toonroyale",
+"segment": "mat_pose2d",
+"look": "toonroyale",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__claymation",
+"segment": "mat_pose2d",
+"look": "claymation",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__zombies",
+"segment": "mat_pose2d",
+"look": "zombies",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_pose2d__robots",
+"segment": "mat_pose2d",
+"look": "robots",
+"condition": "2D pose skeleton",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__kaiju",
+"segment": "mat_wireframe",
+"look": "kaiju",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__anime",
+"segment": "mat_wireframe",
+"look": "anime",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__steampunk",
+"segment": "mat_wireframe",
+"look": "steampunk",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__lego",
+"segment": "mat_wireframe",
+"look": "lego",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__colossus",
+"segment": "mat_wireframe",
+"look": "colossus",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_wireframe__claymation",
+"segment": "mat_wireframe",
+"look": "claymation",
+"condition": "wireframe",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_normals__jedi",
+"segment": "mat_normals",
+"look": "jedi",
+"condition": "normal map",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_normals__witcher",
+"segment": "mat_normals",
+"look": "witcher",
+"condition": "normal map",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_normals__claymation",
+"segment": "mat_normals",
+"look": "claymation",
+"condition": "normal map",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_normals__anime",
+"segment": "mat_normals",
+"look": "anime",
+"condition": "normal map",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_normals__pixelart",
+"segment": "mat_normals",
+"look": "pixelart",
+"condition": "normal map",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__pixelart",
+"segment": "mat_sketch",
+"look": "pixelart",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__lego",
+"segment": "mat_sketch",
+"look": "lego",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__mobydickoilpainting",
+"segment": "mat_sketch",
+"look": "mobydickoilpainting",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__bathtubtoy",
+"segment": "mat_sketch",
+"look": "bathtubtoy",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__skypirate",
+"segment": "mat_sketch",
+"look": "skypirate",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__hokusaiwoodblock",
+"segment": "mat_sketch",
+"look": "hokusaiwoodblock",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__onepieceanime",
+"segment": "mat_sketch",
+"look": "onepieceanime",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_sketch__blackpearl",
+"segment": "mat_sketch",
+"look": "blackpearl",
+"condition": "pencil storyboard",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"fast camera",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "dmc-bagua__ironsuit",
+"segment": "dmc-bagua",
+"look": "ironsuit",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_voxel__westeros",
+"segment": "mat_voxel",
+"look": "westeros",
+"condition": "voxels",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"unseen condition"
+]
+},
+{
+"id": "mat_voxel__eldenring",
+"segment": "mat_voxel",
+"look": "eldenring",
+"condition": "voxels",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"unseen condition"
+]
+},
+{
+"id": "mat_voxel__toonviking",
+"segment": "mat_voxel",
+"look": "toonviking",
+"condition": "voxels",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_voxel__lego",
+"segment": "mat_voxel",
+"look": "lego",
+"condition": "voxels",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_voxel__watercolor",
+"segment": "mat_voxel",
+"look": "watercolor",
+"condition": "voxels",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "dmc-jefe__astronaut",
+"segment": "dmc-jefe",
+"look": "astronaut",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "dmc-jefe__ironsuit",
+"segment": "dmc-jefe",
+"look": "ironsuit",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "dmc-jefe__wuxia",
+"segment": "dmc-jefe",
+"look": "wuxia",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"unseen condition"
+]
+},
+{
+"id": "dmc-jefe__lego",
+"segment": "dmc-jefe",
+"look": "lego",
+"condition": "SMPL body mesh",
+"origin": "DirtyMoCap project video, used as is",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_stagedance__techstage",
+"segment": "mat_stagedance",
+"look": "techstage",
+"condition": "2D pose skeleton",
+"origin": "aligned to a photo",
+"seen": false,
+"tags": [
+"large motion",
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__ukiyoe",
+"segment": "mat_crayon",
+"look": "ukiyoe",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__voxelcraft",
+"segment": "mat_crayon",
+"look": "voxelcraft",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__ghibli",
+"segment": "mat_crayon",
+"look": "ghibli",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__anime",
+"segment": "mat_crayon",
+"look": "anime",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__livefantasy",
+"segment": "mat_crayon",
+"look": "livefantasy",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__pixar",
+"segment": "mat_crayon",
+"look": "pixar",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_crayon__claymation",
+"segment": "mat_crayon",
+"look": "claymation",
+"condition": "child's crayon drawing",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__baghdad",
+"segment": "mat_silhouette",
+"look": "baghdad",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__edoukiyoe",
+"segment": "mat_silhouette",
+"look": "edoukiyoe",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__comictoon",
+"segment": "mat_silhouette",
+"look": "comictoon",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__shadowpuppet",
+"segment": "mat_silhouette",
+"look": "shadowpuppet",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__parisheist",
+"segment": "mat_silhouette",
+"look": "parisheist",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__pixelart",
+"segment": "mat_silhouette",
+"look": "pixelart",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_silhouette__lupinanime",
+"segment": "mat_silhouette",
+"look": "lupinanime",
+"condition": "silhouette",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"multi-person",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__spaceopera",
+"segment": "mat_turbodepth",
+"look": "spaceopera",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__claymation",
+"segment": "mat_turbodepth",
+"look": "claymation",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__tron",
+"segment": "mat_turbodepth",
+"look": "tron",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__akira",
+"segment": "mat_turbodepth",
+"look": "akira",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"night",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__moab",
+"segment": "mat_turbodepth",
+"look": "moab",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__ghibli",
+"segment": "mat_turbodepth",
+"look": "ghibli",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_turbodepth__madmax",
+"segment": "mat_turbodepth",
+"look": "madmax",
+"condition": "colour-mapped depth",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"large motion",
+"fast camera",
+"unseen condition"
+]
+},
+{
+"id": "mat_bbox3d__moscowsnow",
+"segment": "mat_bbox3d",
+"look": "moscowsnow",
+"condition": "3D bounding boxes (driving format)",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"multi-person",
+"unseen condition"
+]
+},
+{
+"id": "mat_bbox3d__claymation",
+"segment": "mat_bbox3d",
+"look": "claymation",
+"condition": "3D bounding boxes (driving format)",
+"origin": "built by our agent",
+"seen": false,
+"tags": [
+"multi-person",
+"stylized",
+"unseen condition"
+]
+},
+{
+"id": "mat_mxg_bellydance__cairo",
+"segment": "mat_mxg_bellydance",
+"look": "cairo",
+"condition": "Mixamo character",
+"origin": "public animation retargeted",
+"seen": false,
+"tags": [
+"large motion",
+"unseen condition"
+]
+},
+{
+"id": "mat_mxg_dancingtwerk__club",
+"segment": "mat_mxg_dancingtwerk",
+"look": "club",
+"condition": "Mixamo character",
+"origin": "public animation retargeted",
+"seen": false,
+"tags": [
+"large motion",
+"night",
+"unseen condition"
+]
+}
+]

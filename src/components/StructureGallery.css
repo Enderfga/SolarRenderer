@@ -1,0 +1,27 @@
+.wipe{position:relative;aspect-ratio:960/544;border-radius:14px;overflow:hidden;background:#0c1418;cursor:ew-resize;touch-action:pan-y;user-select:none}
+.wipe video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wipe .wipe-cond{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.wipe-seam{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#f3dfae;box-shadow:0 0 14px 2px rgba(243,207,131,.55);pointer-events:none}
+.wipe-seam::after{content:"";position:absolute;top:50%;left:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;border:2px solid #f3dfae;background:rgba(12,20,24,.55)}
+.wipe-tag{position:absolute;bottom:10px;font:600 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:99px;background:rgba(12,20,24,.62);color:#efe7d6;backdrop-filter:blur(6px);pointer-events:none}
+.wipe-tag-l{left:10px}.wipe-tag-r{right:10px;color:#f3cf83}
+
+.sg-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;align-items:center}
+.sg-filters button{border:1px solid rgba(239,231,214,.2);background:transparent;color:#efe7d6;border-radius:99px;padding:7px 14px;font-size:13px;transition:background .2s,border-color .2s}
+.sg-filters button b{font-family:var(--mono);font-weight:500;opacity:.55;margin-left:4px}
+.sg-filters button:hover{border-color:rgba(239,231,214,.45)}
+.sg-filters button[aria-selected=true]{background:#efe7d6;color:var(--night);border-color:#efe7d6}
+.sg-filters .sg-new{border-style:dashed}
+.sg-filters .sg-unseen{border-color:var(--gold);color:var(--gold)}
+.sg-filters .sg-unseen[aria-selected=true]{background:var(--gold);color:var(--night)}
+.sg-sep{width:1px;height:22px;background:rgba(239,231,214,.2);margin:0 6px}
+.sg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sg-card{margin:0}
+.sg-card figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:10px;font-size:14px}
+.sg-card figcaption span{font-weight:600}
+.sg-card figcaption em{font-style:normal;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--night);background:var(--gold);border-radius:99px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+.sg-card figcaption small{color:rgba(239,231,214,.55)}
+.sg-more{display:block;margin:34px auto 0;border:1px solid rgba(239,231,214,.3);background:transparent;color:#efe7d6;border-radius:99px;padding:10px 22px}
+.sg-more small{opacity:.55;margin-left:6px}
+@media(max-width:980px){.sg-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.sg-grid{grid-template-columns:1fr}}

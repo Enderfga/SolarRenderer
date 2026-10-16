@@ -1,0 +1,258 @@
+---
+import '../styles/global.css';
+import '../styles/page.css';
+import Hero from '../components/Hero';
+import StructureGallery from '../components/StructureGallery';
+import Worlds from '../components/Worlds';
+import Compare from '../components/Compare';
+import Citation from '../components/Citation';
+import StepFigure from '../components/StepFigure';
+import paper from '../data/paper.json';
+import gallery from '../data/gallery.json';
+import compare from '../data/compare.json';
+import results from '../data/results.json';
+import { asset, media } from '../lib/assets';
+import mulishFontUrl from '../assets/Mulish-Variable.woff2?url';
+
+const cases = gallery;
+// one render per input clip: the structure gallery shows each input once, and the hero wall loops 27 of them
+const perSegment = cases.filter((c, i) => cases.findIndex(d => d.segment === c.segment) === i);
+const heroTiles = perSegment.slice(0, 27).map(c => ({ video: `media/hero/${c.id}.mp4`, poster: `media/gallery/${c.id}/render.webp` }));
+const typeSeen = new Map<string, boolean>();
+cases.forEach(c => typeSeen.set(c.condition, (typeSeen.get(c.condition) ?? false) || c.seen));
+const methodSteps = [
+  { title: 'Inputs', text: 'A structure video, an optional first frame, and a prompt naming each input.' },
+  { title: 'Frame-aligned references', text: 'Each structural latent takes the RoPE position of its target frame. No type identifier.' },
+  { title: 'Frozen DiT, two LoRAs', text: 'A control LoRA follows the structure; an acceleration LoRA renders in four steps.' },
+  { title: 'Rendered video', text: 'The structure fixes layout and motion; first frame and prompt set the look.' },
+  { title: 'Stage 1 · control', text: 'The control LoRA is trained with flow matching.' },
+  { title: 'Stage 2 · acceleration', text: 'A public four-step LoRA is post-trained toward the teacher extrapolated along the structure.' },
+];
+const dataSteps = [
+  { title: 'Eight sources', text: 'Each wedge pairs a condition (inner ring) with its target frame.' },
+  { title: 'Scale and construction', text: '136K clips, 158 frames at 24 fps, checked for sync and captioned.' },
+  { title: 'Inputs per source', text: 'Structure and first frame, structure, first frame, or text only.' },
+  { title: 'Content diversity', text: 'Time of day and scene types named in the captions.' },
+  { title: 'Caption vocabulary', text: 'Frequent words across all training captions.' },
+];
+const types = typeSeen.size, unseen = [...typeSeen.values()].filter(v => !v).length;
+// Elo leaderboard: one board per judge question; medal places per column (equal ratings share a place), bars scaled
+// to the range of the board
+type EloRow = { name: string; sub: string; steps: string; ours: boolean; elo: Record<string, Record<string, number>> };
+const eloRows = results.rows as EloRow[];
+const boards = results.questions.map(q => {
+  const all = eloRows.flatMap(r => results.columns.map(c => r.elo[c.key][q.key]));
+  const lo = Math.min(...all) - 50, hi = Math.max(...all);
+  return { ...q, rows: eloRows.map(r => ({ ...r, cells: results.columns.map(c => {
+    const v = r.elo[c.key][q.key];
+    return { v, place: 1 + eloRows.filter(o => o.elo[c.key][q.key] > v).length, w: Math.max(0, (v - lo) / (hi - lo)) * 100 };
+  }) })) };
+});
+const pageUrl = Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href : import.meta.env.BASE_URL;
+const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'), Astro.site).href : media('media/film/solarrenderer-film.jpg');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1418" />
+    <link rel="icon" type="image/png" href={asset('brand/favicon-64.png')} />
+    <link rel="apple-touch-icon" href={asset('brand/favicon.png')} />
+    <title>{paper.title}</title>
+    <meta name="description" content={paper.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={paper.title} />
+    <meta property="og:description" content={paper.description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={paper.title} />
+    <meta name="twitter:description" content={paper.tagline} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" />
+    <link rel="preload" href={mulishFontUrl} as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="site-header">
+      <a class="wordmark" href="#home" aria-label="SolarRenderer home"><img src={asset('brand/solar-ring-96.png')} alt="" /><b><span>Solar</span>Renderer</b></a>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#film">Film</a><a href="#overview">Overview</a><a href="#structures">Structures</a><a href="#styles">Styles</a><a href="#method">Method</a><a href="#results">Results</a><a href="#comparison">Comparisons</a><a href="#data">Data</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i><i></i></button>
+      <a class="nav-lab" href="https://sites.google.com/view/showlab" target="_blank" rel="noreferrer" aria-label="Show Lab"><img class="lab-dark" src={asset('brand/showlab-dark.png')} alt="Show Lab" /><img class="lab-light" src={asset('brand/showlab-light.png')} alt="" aria-hidden="true" /></a>
+    </header>
+    <main id="main">
+      <div id="home"><Hero tiles={heroTiles} title={paper.title} paperUrl={paper.paperPath || undefined} datasetUrl={paper.datasetUrl} codeUrl={paper.codeUrl} weightsUrl={paper.weightsUrl} client:load /></div>
+
+      <section id="film" class="block dark-section film-section">
+        <div class="wide-width">
+          <video class="film" controls preload="metadata" playsinline poster={media('media/film/solarrenderer-film.jpg')} src={media('media/film/solarrenderer-film.mp4')}></video>
+        </div>
+      </section>
+
+      <div class="paper-body">
+        <section id="overview" class="block content-width">
+          <div class="head-row reveal"><div><h2>Overview</h2></div></div>
+          <div class="abstract reveal">
+            <p>Game engines and agents can build the layout, motion and camera of a scene. SolarRenderer turns that structure into finished video with a <em class="hl-a">control LoRA</em> on MiniMax-H3, and a <em class="hl-b">few-step LoRA post-trained with structure guidance</em> renders it in <em class="hl-c">four steps</em>, 12.3 times faster than fifty. A block-causal version of both LoRAs renders the video as a stream, block by block.</p>
+          </div>
+          <div class="highlights reveal">
+            <article class="hl-a"><h4>One model, many structures</h4><strong>16</strong><p>structure types, 11 of them never seen in training</p></article>
+            <article class="hl-b"><h4>Four steps</h4><strong>12.3×</strong><p>faster sampling than 50 steps, with better image quality and structure</p></article>
+            <article class="hl-c"><h4>Open</h4><strong>208</strong><p>benchmark cases released with the weights and training data</p></article>
+          </div>
+        </section>
+
+        <section id="structures" class="block dark-section">
+          <div class="wide-width">
+            <div class="head-row reveal"><div><h2>Structures</h2></div></div>
+            <StructureGallery cases={perSegment} client:visible />
+          </div>
+        </section>
+
+        <section id="styles" class="block">
+          <div class="wide-width">
+            <div class="head-row reveal">
+              <div><h2>Styles</h2></div>
+              <p>Choose a structure type and one of its samples to watch a single input clip rendered in several styles, where the structure keeps the layout, the motion and the camera of every frame while the first frame and the text decide what the world looks like.</p>
+            </div>
+            <Worlds cases={cases} client:visible />
+          </div>
+        </section>
+
+        <section id="method" class="block band">
+          <div class="content-width">
+            <div class="head-row reveal">
+              <div><h2>Method</h2></div>
+              <p>A control LoRA teaches the frozen backbone to follow a structure video, and a few-step LoRA post-trained with structure guidance renders it in four steps.</p>
+            </div>
+            <StepFigure client:visible src={asset('figures/anim/method.html')} width={960} height={552} label="SolarRenderer method: structure as frame-aligned references to a frozen DiT with a control LoRA and a four-step LoRA" steps={methodSteps} />
+          </div>
+        </section>
+
+        <section id="results" class="block">
+          <div class="content-width">
+            <div class="head-row reveal">
+              <div><h2>Results</h2></div>
+              <p>A Gemini judge (gemini-3.8-flash) compares the methods in pairs on every case, and one Elo rating per method is fit for each of the four questions. A blind test with human judges agrees with the direction of the judge’s preferences.</p>
+            </div>
+            <div class="elo-tabs reveal">
+              {boards.map((b, i) => <input type="radio" name="elo-q" id={`elo-q-${b.key}`} class={`elo-radio elo-radio-${b.key}`} checked={i === 0} />)}
+              <div class="elo-tablist" role="tablist" aria-label="Judge question">
+                {boards.map(b => <label for={`elo-q-${b.key}`} class={`elo-tab elo-tab-${b.key}`}>{b.label}</label>)}
+              </div>
+              {boards.map(b => <div class={`elo-board elo-board-${b.key}`}>
+                <div class="elo-row elo-head">
+                  <span class="elo-name">Method</span><span class="elo-steps">Steps</span>
+                  {results.columns.map(c => <span class="elo-col"><span class="elo-long">{c.label}<small>{c.sub}</small></span><span class="elo-short">{c.short}<small>{c.shortSub}</small></span></span>)}
+                </div>
+                {b.rows.map(r => <div class={`elo-row${r.ours ? ' elo-ours' : ''}`}>
+                  <span class="elo-name">{r.name}{r.sub && <small>{r.sub}</small>}</span>
+                  <span class="elo-steps">{r.steps}</span>
+                  {r.cells.map(c => <span class="elo-col">
+                    <span class="elo-cell">
+                      {c.place <= 3 ? <i class={`medal medal-${c.place}`} aria-label={`rank ${c.place}`}>{c.place}</i> : <i class="medal-none"></i>}
+                      <b>{c.v}</b>
+                    </span>
+                    <span class="elo-track"><i style={`--w:${c.w}%`}></i></span>
+                  </span>)}
+                </div>)}
+              </div>)}
+            </div>
+            <div class="res-group reveal demos-group">
+              <h3>{results.demos.title}</h3>
+              <p>{results.demos.text}</p>
+              <div class="wtl">
+                <div class="wtl-track">
+                  <i class="w" style={`--f:${results.demos.wtl.win}`}><span>{results.demos.wtl.win} wins</span></i>
+                  <i class="t" style={`--f:${results.demos.wtl.tie}`}><span>{results.demos.wtl.tie} ties</span></i>
+                  <i class="l" style={`--f:${results.demos.wtl.loss}`}><span>{results.demos.wtl.loss} losses</span></i>
+                </div>
+                <b>{results.demos.wtl.v >= 0 ? '+' : ''}{results.demos.wtl.v.toFixed(2)}{results.demos.wtl.sig ? '*' : ''}</b>
+              </div>
+            </div>
+            <p class="bars-note">{results.note}</p>
+          </div>
+        </section>
+
+        <section id="comparison" class="block band">
+          <div class="wide-width">
+            <div class="head-row reveal">
+              <div><h2>Comparisons</h2></div>
+              <div>
+                <p>We render 86 examples that fifteen published works show on their own pages, from the structure they released, with their reference image or the first frame of their result as our first frame. Each row shows their input, their result and SolarRenderer.</p>
+              </div>
+            </div>
+            <Compare works={compare.works as [string, string][]} pairs={compare.pairs} client:visible />
+          </div>
+        </section>
+
+        <section id="data" class="block">
+          <div class="content-width">
+            <div class="head-row reveal">
+              <div><h2>Benchmark and data</h2></div>
+              <p>Everything below is released, except the training clips we may not redistribute.</p>
+            </div>
+            <StepFigure client:visible src={asset('figures/anim/data.html')} width={860} height={540} label="SolarRenderer data: sources, inputs per source, content diversity and caption vocabulary" steps={dataSteps} />
+            <div class="data-cards reveal">
+              <a class="data-card" href={paper.datasetUrl} target="_blank" rel="noreferrer"><h3>Generalization benchmark</h3><strong>208</strong><p>cases over {types} structure types, {unseen} unseen in training</p></a>
+              <a class="data-card" href={paper.datasetUrl} target="_blank" rel="noreferrer"><h3>In-distribution test set</h3><strong>53</strong><p>clips with ground truth</p></a>
+              <a class="data-card" href={paper.datasetUrl} target="_blank" rel="noreferrer"><h3>Training data</h3><strong>136,289</strong><p>clips in the training index, one sample each; 57,738 released with video</p></a>
+              <a class="data-card" href={paper.weightsUrl} target="_blank" rel="noreferrer"><h3>Weights</h3><strong>4</strong><p>LoRAs: control and four-step, for full-clip and for causal streaming rendering</p></a>
+            </div>
+          </div>
+        </section>
+
+        <section id="paper" class="block band">
+          <div class="content-width">
+            <div class="citation-heading reveal"><h2>Citation</h2></div>
+            <div class="citation-area reveal"><Citation bibtex={paper.bibtex} client:visible /></div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="content-width footer-main">
+        <div class="footer-brand">
+          <a class="wordmark footer-logo" href="#home"><img src={asset('brand/solar-ring-96.png')} alt="" /><b><span>Solar</span>Renderer</b></a>
+          <p>{paper.tagline}</p>
+          <div class="footer-links"><a href={paper.codeUrl} target="_blank" rel="noreferrer">Code</a><a href={paper.weightsUrl} target="_blank" rel="noreferrer">Weights</a><a href={paper.datasetUrl} target="_blank" rel="noreferrer">Data</a><a href="#paper">Citation</a></div>
+        </div>
+        <div class="footer-authors">
+          <h2>Authors</h2>
+          <p class="footer-names">{paper.authors.map(a => <span>{a.name}{a.aff.length > 0 && <sup>{a.aff.join(',')}</sup>}</span>)}</p>
+          <p class="footer-affiliations">{paper.affiliations.map((n, i) => <span><sup>{i + 1}</sup>{n}</span>)}</p>
+          <p class="footer-note">Contact: <a href={`mailto:${paper.contact}`}>{paper.contact}</a></p>
+        </div>
+      </div>
+      <div class="content-width footer-bottom"><span>© 2026 SolarRenderer authors · videos labelled SolarRenderer are generated by the model</span><a href="#home">Back to top ↑</a></div>
+    </footer>
+    <script>
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reveal = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); reveal.unobserve(entry.target); } }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => reduce ? el.classList.add('in') : reveal.observe(el));
+      const counter = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return; counter.unobserve(entry.target);
+        const el = entry.target as HTMLElement, end = Number(el.dataset.count), t0 = performance.now(), dur = 1400;
+        if (reduce) return;
+        const tick = (now: number) => { const u = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - u, 3); el.textContent = String(Math.round(end * e)); if (u < 1) requestAnimationFrame(tick); };
+        requestAnimationFrame(tick);
+      }), { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(el => counter.observe(el));
+      const header = document.getElementById('site-header')!;
+      const dark = ['home', 'film', 'structures'].map(id => document.getElementById(id)!);
+      const onScroll = () => {
+        const over = dark.some(el => { const r = el.getBoundingClientRect(); return r.top <= 66 && r.bottom > 64; });
+        header.classList.toggle('is-dark', over);
+        header.classList.toggle('is-top', window.scrollY < 10);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+      const toggle = document.getElementById('nav-toggle')!;
+      const setOpen = (open: boolean) => { header.classList.toggle('nav-open', open); toggle.setAttribute('aria-expanded', String(open)); };
+      toggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
+      document.querySelectorAll('#site-nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    </script>
+  </body>
+</html>

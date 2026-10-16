@@ -1,0 +1,78 @@
+{
+  "title": "SolarRenderer: Few-Step Generative Reference Rendering",
+  "short": "SolarRenderer",
+  "tagline": "The agent builds it. We render it.",
+  "description": "SolarRenderer turns the structure that game engines and agents produce into finished video in four sampling steps, following grey boxes, semantic maps, skeletons, depth and structure types it never saw in training.",
+  "abstract": "Game engines and coding agents can specify the layout, motion, and camera of a scene, yet turning such coarse structure into realistic video requires a renderer that follows the structure and completes the appearance it leaves open. Existing renderers are tied to the representation of one engine, need tens of denoising steps or a costly distillation of their own, and learn from conditions that are not aligned with their target videos. We present SolarRenderer, a structure-conditioned video renderer that adapts a frozen MiniMax-H3 33B backbone with two lightweight LoRAs. Structural videos enter the native reference pathway of the backbone at the positions of the frames they describe, without a type identifier and described only in plain text, so that a single control LoRA follows arbitrary structural representations. Starting from a pretrained four-step LoRA, structure-guided distribution matching renders in four steps, 12.3 times faster than 50-step sampling, while preserving the learned control. To train the model, we build a frame-aligned corpus of 136K clips from game engines, simulators, and YouTube videos. Experiments on an in-distribution test set and a generalization benchmark of 16 structural representations show that SolarRenderer achieves state-of-the-art results across both, and generalizes to 11 unseen representations, including pose skeletons, drawings, and point clouds.",
+  "authors": [
+    {
+      "name": "Guian Fang",
+      "aff": [
+        1
+      ]
+    },
+    {
+      "name": "Shengju Qian",
+      "aff": [
+        2
+      ]
+    },
+    {
+      "name": "Dongyue Lu",
+      "aff": [
+        1
+      ]
+    },
+    {
+      "name": "Junchao Huang",
+      "aff": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Lutao Jiang",
+      "aff": [
+        5
+      ]
+    },
+    {
+      "name": "Xin Wang",
+      "aff": [
+        2
+      ]
+    },
+    {
+      "name": "Yiren Song",
+      "aff": [
+        1
+      ]
+    },
+    {
+      "name": "Li Jiang",
+      "aff": [
+        3,
+        4
+      ]
+    },
+    {
+      "name": "Mike Zheng Shou",
+      "aff": [
+        1
+      ]
+    }
+  ],
+  "affiliations": [
+    "NUS",
+    "LIGHTSPEED",
+    "CUHK(SZ)",
+    "SLAI",
+    "HKUST(GZ)"
+  ],
+  "paperPath": "https://enderfga.cn/data/solarrenderer.pdf",
+  "codeUrl": "https://github.com/Enderfga/SolarRenderer",
+  "weightsUrl": "https://huggingface.co/Enderfga/SolarRenderer",
+  "datasetUrl": "https://huggingface.co/datasets/Enderfga/SolarRenderer-Data",
+  "contact": "guianfang@u.nus.edu",
+  "bibtex": "@article{fang2026solarrenderer,\n  title  = {SolarRenderer: Few-Step Generative Reference Rendering},\n  author = {Fang, Guian and Qian, Shengju and Lu, Dongyue and\n            Huang, Junchao and Jiang, Lutao and Wang, Xin and\n            Song, Yiren and Jiang, Li and Shou, Mike Zheng},\n  year   = {2026}\n}"
+}

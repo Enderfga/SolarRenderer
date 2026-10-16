@@ -1,0 +1,51 @@
+name: Build and deploy Pages
+on:
+  push:
+    branches: [page]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Page media from the dataset
+        if: ${{ vars.PUBLIC_MEDIA_BASE == '' }}
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install -q "huggingface_hub>=1.0"
+          hf download Enderfga/SolarRenderer-Data --repo-type dataset --include "page/*" --local-dir "$RUNNER_TEMP/hf"
+          mkdir -p public && rm -rf public/media && mv "$RUNNER_TEMP/hf/page" public/media
+          du -sh public/media
+      - uses: actions/configure-pages@v5
+        id: pages
+      - run: npm run check && npm run build
+        env:
+          ASTRO_TELEMETRY_DISABLED: '1'
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          PUBLIC_MEDIA_BASE: ${{ vars.PUBLIC_MEDIA_BASE }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

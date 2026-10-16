@@ -1,0 +1,668 @@
+{
+"works": [
+[
+"magpie",
+"Magpie"
+],
+[
+"das",
+"Diffusion as Shader"
+],
+[
+"cosmos",
+"Cosmos-Transfer2.5"
+],
+[
+"pai",
+"PAI ControlNet-Union"
+],
+[
+"safka",
+"Safka blog"
+],
+[
+"scenecraft",
+"SceneCraft"
+],
+[
+"pwm",
+"Programmable World Model"
+],
+[
+"p2w",
+"Proxy2World"
+],
+[
+"cwm",
+"CWM"
+],
+[
+"cvm",
+"Code Video Model"
+],
+[
+"gwtf",
+"Go-with-the-Flow"
+],
+[
+"vace",
+"VACE"
+],
+[
+"eden",
+"EdenLive"
+],
+[
+"sr",
+"StreamRender-H3"
+],
+[
+"ag",
+"AgentGarten"
+]
+],
+"pairs": [
+{
+"id": "cmp-p2w-01",
+"work": "p2w",
+"n": "01",
+"sec": 5.04,
+"structure": "grey box"
+},
+{
+"id": "cmp-p2w-02",
+"work": "p2w",
+"n": "02",
+"sec": 5.04,
+"structure": "grey box"
+},
+{
+"id": "cmp-p2w-03",
+"work": "p2w",
+"n": "03",
+"sec": 5.04,
+"structure": "grey box"
+},
+{
+"id": "cmp-p2w-04",
+"work": "p2w",
+"n": "04",
+"sec": 5.04,
+"structure": "grey box"
+},
+{
+"id": "cmp-p2w-05",
+"work": "p2w",
+"n": "05",
+"sec": 5.04,
+"structure": "grey box"
+},
+{
+"id": "cmp-p2w-06",
+"work": "p2w",
+"n": "06",
+"sec": 5.04,
+"structure": "depth"
+},
+{
+"id": "cmp-magpie-01",
+"work": "magpie",
+"n": "01",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-magpie-02",
+"work": "magpie",
+"n": "02",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-magpie-03",
+"work": "magpie",
+"n": "03",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-magpie-04",
+"work": "magpie",
+"n": "04",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-magpie-05",
+"work": "magpie",
+"n": "05",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-magpie-06",
+"work": "magpie",
+"n": "06",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-cwm-01",
+"work": "cwm",
+"n": "01",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cwm-02",
+"work": "cwm",
+"n": "02",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cwm-03",
+"work": "cwm",
+"n": "03",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cwm-04",
+"work": "cwm",
+"n": "04",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cwm-05",
+"work": "cwm",
+"n": "05",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cwm-06",
+"work": "cwm",
+"n": "06",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-01",
+"work": "cvm",
+"n": "01",
+"sec": 5.17,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-02",
+"work": "cvm",
+"n": "02",
+"sec": 5.17,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-03",
+"work": "cvm",
+"n": "03",
+"sec": 5.0,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-04",
+"work": "cvm",
+"n": "04",
+"sec": 5.17,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-05",
+"work": "cvm",
+"n": "05",
+"sec": 5.17,
+"structure": "proxy render"
+},
+{
+"id": "cmp-cvm-06",
+"work": "cvm",
+"n": "06",
+"sec": 5.17,
+"structure": "proxy render"
+},
+{
+"id": "cmp-das-01",
+"work": "das",
+"n": "01",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-das-02",
+"work": "das",
+"n": "02",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-das-03",
+"work": "das",
+"n": "03",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-das-04",
+"work": "das",
+"n": "04",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-das-05",
+"work": "das",
+"n": "05",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-das-06",
+"work": "das",
+"n": "06",
+"sec": 2.0,
+"structure": "grey box"
+},
+{
+"id": "cmp-cosmos-01",
+"work": "cosmos",
+"n": "01",
+"sec": 5.04,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-cosmos-02",
+"work": "cosmos",
+"n": "02",
+"sec": 4.08,
+"structure": "depth"
+},
+{
+"id": "cmp-cosmos-03",
+"work": "cosmos",
+"n": "03",
+"sec": 2.0,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-cosmos-04",
+"work": "cosmos",
+"n": "04",
+"sec": 4.08,
+"structure": "edges"
+},
+{
+"id": "cmp-cosmos-05",
+"work": "cosmos",
+"n": "05",
+"sec": 5.79,
+"structure": "depth"
+},
+{
+"id": "cmp-cosmos-06",
+"work": "cosmos",
+"n": "06",
+"sec": 4.17,
+"structure": "edges"
+},
+{
+"id": "cmp-pai-01",
+"work": "pai",
+"n": "01",
+"sec": 5.17,
+"structure": "depth"
+},
+{
+"id": "cmp-pai-02",
+"work": "pai",
+"n": "02",
+"sec": 5.17,
+"structure": "boxes"
+},
+{
+"id": "cmp-pai-03",
+"work": "pai",
+"n": "03",
+"sec": 5.17,
+"structure": "pose skeleton"
+},
+{
+"id": "cmp-pai-04",
+"work": "pai",
+"n": "04",
+"sec": 5.17,
+"structure": "grayscale"
+},
+{
+"id": "cmp-pai-05",
+"work": "pai",
+"n": "05",
+"sec": 5.17,
+"structure": "edges"
+},
+{
+"id": "cmp-pai-06",
+"work": "pai",
+"n": "06",
+"sec": 5.17,
+"structure": "edges"
+},
+{
+"id": "cmp-safka-01",
+"work": "safka",
+"n": "01",
+"sec": 4.04,
+"structure": "depth"
+},
+{
+"id": "cmp-safka-02",
+"work": "safka",
+"n": "02",
+"sec": 4.04,
+"structure": "proxy render"
+},
+{
+"id": "cmp-scenecraft-01",
+"work": "scenecraft",
+"n": "01",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-scenecraft-02",
+"work": "scenecraft",
+"n": "02",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-scenecraft-03",
+"work": "scenecraft",
+"n": "03",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-scenecraft-04",
+"work": "scenecraft",
+"n": "04",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-scenecraft-05",
+"work": "scenecraft",
+"n": "05",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-scenecraft-06",
+"work": "scenecraft",
+"n": "06",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-pwm-01",
+"work": "pwm",
+"n": "01",
+"sec": 4.54,
+"structure": "boxes"
+},
+{
+"id": "cmp-pwm-02",
+"work": "pwm",
+"n": "02",
+"sec": 5.04,
+"structure": "boxes"
+},
+{
+"id": "cmp-pwm-03",
+"work": "pwm",
+"n": "03",
+"sec": 4.54,
+"structure": "boxes"
+},
+{
+"id": "cmp-pwm-04",
+"work": "pwm",
+"n": "04",
+"sec": 6.58,
+"structure": "boxes"
+},
+{
+"id": "cmp-pwm-05",
+"work": "pwm",
+"n": "05",
+"sec": 4.54,
+"structure": "boxes"
+},
+{
+"id": "cmp-pwm-06",
+"work": "pwm",
+"n": "06",
+"sec": 4.54,
+"structure": "boxes"
+},
+{
+"id": "cmp-gwtf-01",
+"work": "gwtf",
+"n": "01",
+"sec": 3.04,
+"structure": "proxy render"
+},
+{
+"id": "cmp-gwtf-02",
+"work": "gwtf",
+"n": "02",
+"sec": 3.04,
+"structure": "proxy render"
+},
+{
+"id": "cmp-gwtf-03",
+"work": "gwtf",
+"n": "03",
+"sec": 6.12,
+"structure": "depth"
+},
+{
+"id": "cmp-gwtf-04",
+"work": "gwtf",
+"n": "04",
+"sec": 6.12,
+"structure": "depth"
+},
+{
+"id": "cmp-vace-01",
+"work": "vace",
+"n": "01",
+"sec": 5.0,
+"structure": "boxes"
+},
+{
+"id": "cmp-vace-03",
+"work": "vace",
+"n": "03",
+"sec": 2.79,
+"structure": "pose skeleton"
+},
+{
+"id": "cmp-eden-01",
+"work": "eden",
+"n": "01",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-eden-02",
+"work": "eden",
+"n": "02",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-eden-03",
+"work": "eden",
+"n": "03",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-eden-04",
+"work": "eden",
+"n": "04",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-eden-05",
+"work": "eden",
+"n": "05",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-eden-06",
+"work": "eden",
+"n": "06",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-eden-07",
+"work": "eden",
+"n": "07",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-eden-08",
+"work": "eden",
+"n": "08",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-eden-09",
+"work": "eden",
+"n": "09",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-eden-10",
+"work": "eden",
+"n": "10",
+"sec": 6.58,
+"structure": "gameplay footage"
+},
+{
+"id": "cmp-sr-01",
+"work": "sr",
+"n": "01",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-02",
+"work": "sr",
+"n": "02",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-03",
+"work": "sr",
+"n": "03",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-04",
+"work": "sr",
+"n": "04",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-05",
+"work": "sr",
+"n": "05",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-06",
+"work": "sr",
+"n": "06",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-07",
+"work": "sr",
+"n": "07",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-sr-08",
+"work": "sr",
+"n": "08",
+"sec": 6.58,
+"structure": "semantic segmentation"
+},
+{
+"id": "cmp-ag-01",
+"work": "ag",
+"n": "01",
+"sec": 5.17,
+"structure": "grey box"
+},
+{
+"id": "cmp-ag-02",
+"work": "ag",
+"n": "02",
+"sec": 6.58,
+"structure": "normal map"
+},
+{
+"id": "cmp-ag-03",
+"work": "ag",
+"n": "03",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-ag-04",
+"work": "ag",
+"n": "04",
+"sec": 6.58,
+"structure": "grey box"
+},
+{
+"id": "cmp-ag-05",
+"work": "ag",
+"n": "05",
+"sec": 6.58,
+"structure": "proxy render"
+},
+{
+"id": "cmp-ag-06",
+"work": "ag",
+"n": "06",
+"sec": 6.58,
+"structure": "proxy render"
+}
+]
+}
