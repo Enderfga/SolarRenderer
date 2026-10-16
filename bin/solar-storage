@@ -1,0 +1,211 @@
+#!/usr/bin/env python3
+"""solar-storage: the small storage command the scripts of this branch call (set STORAGE_CLI to use another).
+
+    solar-storage [--numworkers N] [--log LEVEL] cp [--concurrency N] SRC DST
+    solar-storage ls PATH            list objects; PATH may hold * and ? wildcards
+    solar-storage cat PATH           write an object to stdout
+    solar-storage run FILE           run the commands in FILE (one per line), in parallel
+
+Paths are local files or <scheme>://... URLs, read and written through fsspec; install the fsspec backend for
+your storage. A * matches across "/". Listing lines are "YYYY/MM/DD HH:MM:SS SIZE NAME" (directories
+"DIR NAME/"), where NAME is relative to the part of PATH before its first wildcard, or to the parent of a plain
+PATH; an empty listing exits with status 1.
+"""
+
+from __future__ import annotations
+
+import datetime as dt
+import fnmatch
+import os
+import posixpath
+import re
+import shlex
+import sys
+from concurrent.futures import ThreadPoolExecutor
+
+WILD = re.compile(r"[*?\[]")
+
+
+def fs_of(path):
+    from fsspec.core import url_to_fs
+
+    return url_to_fs(path)
+
+
+def scheme(path: str) -> str:
+    return path.split("://", 1)[0] + "://" if "://" in path else ""
+
+
+def mtime(info: dict) -> dt.datetime:
+    for key in ("mtime", "LastModified", "last_modified", "updated", "modified", "created", "timeCreated"):
+        value = info.get(key)
+        if value is None:
+            continue
+        if isinstance(value, (int, float)):
+            return dt.datetime.fromtimestamp(float(value), dt.timezone.utc)
+        if isinstance(value, dt.datetime):
+            return value if value.tzinfo else value.replace(tzinfo=dt.timezone.utc)
+        try:
+            return dt.datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+    return dt.datetime.fromtimestamp(0, dt.timezone.utc)
+
+
+def matches(pattern: str) -> tuple[object, str, list[dict]]:
+    """(filesystem, base, objects) for a wildcard pattern: every object below the part before the first wildcard
+    whose path matches, * also spanning "/"."""
+
+    fs, path = fs_of(pattern)
+    cut = WILD.search(path).start()
+    base = path[:cut].rsplit("/", 1)[0] if "/" in path[:cut] else ""
+    regex = re.compile(fnmatch.translate(path))
+    found = fs.find(base, detail=True) if base else fs.find(path[:cut], detail=True)
+    objects = [info for name, info in sorted(found.items()) if regex.match(name) and info.get("type") != "directory"]
+    return fs, base, objects
+
+
+def rel(name: str, base: str) -> str:
+    return name[len(base):].lstrip("/") if base and name.startswith(base) else posixpath.basename(name)
+
+
+def line(info: dict, name: str) -> str:
+    return f"{mtime(info):%Y/%m/%d %H:%M:%S} {int(info.get('size') or 0):>17}  {name}"
+
+
+def ls(path: str) -> int:
+    fs, key = fs_of(path)
+    out = []
+    if WILD.search(key):
+        _, base, objects = matches(path)
+        out = [line(info, rel(info["name"], base)) for info in objects]
+    elif path.endswith("/"):
+        try:
+            entries = fs.ls(key.rstrip("/"), detail=True)
+        except FileNotFoundError:
+            entries = []
+        for info in sorted(entries, key=lambda i: i["name"]):
+            name = posixpath.basename(info["name"].rstrip("/"))
+            out.append(f"{'DIR':>39}  {name}/" if info.get("type") == "directory" else line(info, name))
+    else:
+        try:
+            info = fs.info(key)
+            if info.get("type") != "directory":
+                # A plain remote key lists as its full path below the bucket.
+                out = [line(info, key.split("/", 1)[1] if scheme(path) and "/" in key else posixpath.basename(key))]
+        except FileNotFoundError:
+            pass
+    if not out:
+        print(f'ERROR "ls {path}": no object found', file=sys.stderr)
+        return 1
+    print("\n".join(out))
+    return 0
+
+
+def cat(path: str) -> int:
+    fs, key = fs_of(path)
+    with fs.open(key, "rb") as handle:
+        while chunk := handle.read(1 << 22):
+            sys.stdout.buffer.write(chunk)
+    sys.stdout.buffer.flush()
+    return 0
+
+
+def copy_one(src: str, dst: str) -> None:
+    sfs, skey = fs_of(src)
+    dfs, dkey = fs_of(dst)
+    local_src, local_dst = not scheme(src), not scheme(dst)
+    if local_dst:
+        os.makedirs(os.path.dirname(os.path.abspath(dkey)) or ".", exist_ok=True)
+    if local_src and local_dst:
+        import shutil
+
+        shutil.copyfile(skey, dkey)
+    elif local_src:
+        dfs.put_file(skey, dkey)
+    elif local_dst:
+        sfs.get_file(skey, dkey)
+    elif sfs is dfs or type(sfs) is type(dfs):
+        sfs.copy(skey, dkey)
+    else:
+        with sfs.open(skey, "rb") as fin, dfs.open(dkey, "wb") as fout:
+            while chunk := fin.read(1 << 22):
+                fout.write(chunk)
+
+
+def join(dst: str, name: str) -> str:
+    return dst.rstrip("/") + "/" + name
+
+
+def cp(src: str, dst: str, workers: int) -> int:
+    _, skey = fs_of(src)
+    if WILD.search(skey) and not scheme(src):
+        # A local wildcard is a shell-style glob ("*" stays within a directory); a matched directory goes
+        # with everything below it, keeping the paths relative to the directory of the pattern.
+        import glob as globlib
+
+        root = os.path.dirname(skey.split("*")[0].split("?")[0]) or "."
+        pairs = []
+        for hit in sorted(globlib.glob(skey)):
+            files = [hit] if os.path.isfile(hit) else [os.path.join(d, f) for d, _, fs in os.walk(hit) for f in fs]
+            pairs += [(f, join(dst, os.path.relpath(f, root))) for f in sorted(files)]
+        if not pairs:
+            print(f'ERROR "cp {src} {dst}": no object found', file=sys.stderr)
+            return 1
+    elif WILD.search(skey):
+        _, base, objects = matches(src)
+        if not objects:
+            print(f'ERROR "cp {src} {dst}": no object found', file=sys.stderr)
+            return 1
+        prefix = scheme(src)
+        pairs = [(prefix + info["name"] if prefix else info["name"], join(dst, rel(info["name"], base))) for info in objects]
+    else:
+        target = join(dst, posixpath.basename(skey)) if dst.endswith("/") or (not scheme(dst) and os.path.isdir(dst)) else dst
+        pairs = [(src, target)]
+    with ThreadPoolExecutor(max(1, workers)) as pool:
+        for future in [pool.submit(copy_one, a, b) for a, b in pairs]:
+            future.result()
+    return 0
+
+
+def run(path: str, workers: int) -> int:
+    commands = [shlex.split(text) for text in open(path).read().splitlines() if text.strip() and not text.lstrip().startswith("#")]
+    with ThreadPoolExecutor(max(1, workers)) as pool:
+        codes = list(pool.map(lambda argv: dispatch(argv, 1), commands))
+    return max(codes, default=0)
+
+
+def dispatch(argv: list[str], workers: int) -> int:
+    verb, args = argv[0], argv[1:]
+    try:
+        if verb == "cp":
+            while args and args[0].startswith("--"):
+                args = args[2:] if args[0] in ("--concurrency", "--part-size") else args[1:]
+            return cp(args[0], args[1], workers)
+        if verb == "ls":
+            return ls(args[0])
+        if verb == "cat":
+            return cat(args[0])
+        if verb == "run":
+            return run(args[0], workers)
+    except FileNotFoundError as exc:
+        print(f'ERROR "{verb} {" ".join(args)}": {exc}', file=sys.stderr)
+        return 1
+    print(f"solar-storage: unknown command {verb}", file=sys.stderr)
+    return 2
+
+
+def main() -> int:
+    argv, workers = sys.argv[1:], 16
+    while argv and argv[0].startswith("--"):
+        if argv[0] == "--numworkers":
+            workers = int(argv[1])
+        argv = argv[2:] if argv[0] in ("--numworkers", "--log", "--endpoint-url") else argv[1:]
+    if not argv:
+        print(__doc__, file=sys.stderr)
+        return 2
+    return dispatch(argv, workers)
+
+
+if __name__ == "__main__":
+    sys.exit(main())

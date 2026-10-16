@@ -1,0 +1,12 @@
+# Python packages used across this branch. Blender scripts run inside Blender's own Python (bpy, mathutils);
+# sources/carla needs the carla==0.9.16 wheel; ffmpeg and ffprobe must be on PATH; bin/solar-storage is the storage command.
+numpy
+scipy
+opencv-python-headless
+pillow
+av
+fsspec
+requests
+huggingface_hub
+rapidocr_onnxruntime
+unrealcv
