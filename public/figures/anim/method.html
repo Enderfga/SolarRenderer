@@ -196,6 +196,19 @@ body.anim .stp.on{opacity:1;transform:none}
   document.querySelectorAll('video.mv').forEach(function (v) { v.play && v.play().catch(function () {}); });
 })();
 </script><script>
+// each step wrapper used to span the whole canvas, so every one sat over the animated parts and became its own
+// full-size compositing layer (~400 MB at 3x on a phone): shrink each to its children, which keep their places
+(function () {
+  document.querySelectorAll('.stpw').forEach(function (w) {
+    var k = [].slice.call(w.children), x = 1 / 0, y = 1 / 0, X = -1 / 0, Y = -1 / 0;
+    if (!k.length) return;
+    var r = k.map(function (c) { return [c.offsetLeft, c.offsetTop, c.offsetWidth, c.offsetHeight]; });
+    r.forEach(function (b) { x = Math.min(x, b[0]); y = Math.min(y, b[1]); X = Math.max(X, b[0] + b[2]); Y = Math.max(Y, b[1] + b[3]); });
+    w.style.left = x + 'px'; w.style.top = y + 'px'; w.style.width = (X - x) + 'px'; w.style.height = (Y - y) + 'px';
+    k.forEach(function (c, i) { c.style.right = c.style.bottom = 'auto'; c.style.left = (r[i][0] - x) + 'px'; c.style.top = (r[i][1] - y) + 'px'; });
+  });
+})();
+</script><script>
 // the page drives the figure: show(step) reveals steps 1..step (0 = the whole figure at once)
 function replay(e) {            // restart a group's entry motion (bars grow, numbers count, chips pop)
   e.classList.remove('go'); void e.getBoundingClientRect(); e.classList.add('go');
