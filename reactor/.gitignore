@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+demo/node_modules/
+demo/dist/
+.venv/
+weights/
+schema.json
+!demo/public/examples/highway/structure.mp4
