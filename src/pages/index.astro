@@ -48,6 +48,12 @@ const boards = results.questions.map(q => {
     return { v, place: 1 + eloRows.filter(o => o.elo[c.key][q.key] > v).length, w: Math.max(0, (v - lo) / (hi - lo)) * 100 };
   }) })) };
 });
+// Real-time clips above the film: one player, the hands-on clip first, a card per clip
+const rtClips = [
+  { title: 'Hands-on', text: 'A shooter played by hand, filmed on a phone', src: 'media/realtime/handson.mp4', poster: 'media/realtime/handson.jpg', thumb: 'media/realtime/handson_thumb.jpg' },
+  { title: 'Characters', text: 'One dance, three characters swapped live', src: 'media/realtime/characters.mp4', poster: 'media/realtime/characters.jpg', thumb: 'media/realtime/characters_thumb.jpg' },
+  { title: 'Games', text: 'Three games, each played live into a new world', src: 'media/realtime/games.mp4', poster: 'media/realtime/games.jpg', thumb: 'media/realtime/games_thumb.jpg' },
+];
 const pageUrl = Astro.site ? new URL(import.meta.env.BASE_URL, Astro.site).href : import.meta.env.BASE_URL;
 const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'), Astro.site).href : media('media/film/solarrenderer-film.jpg');
 ---
@@ -88,6 +94,24 @@ const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'),
 
       <section id="film" class="block dark-section film-section">
         <div class="wide-width">
+          <div class="rt-head">
+            <h2>Real <em>time</em></h2>
+            <p class="rt-stats"><b>24</b> fps<span>a 17-frame chunk every <b>0.70 s</b></span><span><b>1.1 s</b> behind its input</span></p>
+          </div>
+          <div class="rt-stage">
+            <video class="film rt-video" muted autoplay playsinline preload="auto" poster={media(rtClips[0].poster)} src={media(rtClips[0].src)}></video>
+            <button class="rt-sound" type="button" aria-label="Sound on" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="rt-wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/><path class="rt-mute" d="M16 9l6 6M22 9l-6 6"/></svg>
+            </button>
+          </div>
+          <div class="rt-cards" role="tablist" aria-label="Real-time clips">
+            {rtClips.map((c, i) => <button type="button" role="tab" class={`rt-card${i === 0 ? ' on' : ''}${c.src ? '' : ' soon'}`} data-src={c.src ? media(c.src) : ''} data-poster={c.src ? media(c.poster) : ''} disabled={!c.src} aria-selected={i === 0 ? 'true' : 'false'}>
+              <img src={media(c.thumb)} alt="" loading="lazy" />
+              <span class="rt-card-text"><b>{c.title}</b><small>{c.text}</small></span>
+              <i class="rt-progress"><i></i></i>
+            </button>)}
+          </div>
+          <h3 class="film-title">Film</h3>
           <video class="film" controls preload="metadata" playsinline poster={media('media/film/solarrenderer-film.jpg')} src={media('media/film/solarrenderer-film.mp4')}></video>
         </div>
       </section>
@@ -249,6 +273,30 @@ const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'),
         header.classList.toggle('is-top', window.scrollY < 10);
       };
       window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+      // real-time player: a card swaps the clip, a clip that ends hands over to the next one, the button toggles sound
+      const rtVideo = document.querySelector<HTMLVideoElement>('.rt-video');
+      const rtCards = [...document.querySelectorAll<HTMLButtonElement>('.rt-card')].filter(c => c.dataset.src);
+      const rtSound = document.querySelector<HTMLButtonElement>('.rt-sound');
+      if (rtVideo && rtCards.length) {
+        let cur = 0;
+        const show = (i: number) => {
+          cur = i;
+          rtCards.forEach((c, k) => { c.classList.toggle('on', k === i); c.setAttribute('aria-selected', String(k === i)); (c.querySelector('.rt-progress>i') as HTMLElement).style.width = '0'; });
+          rtVideo.poster = rtCards[i].dataset.poster!; rtVideo.src = rtCards[i].dataset.src!; rtVideo.play().catch(() => {});
+        };
+        rtCards.forEach((c, i) => c.addEventListener('click', () => show(i)));
+        rtVideo.addEventListener('ended', () => show((cur + 1) % rtCards.length));
+        rtVideo.addEventListener('timeupdate', () => {
+          const bar = rtCards[cur].querySelector('.rt-progress>i') as HTMLElement;
+          if (rtVideo.duration) bar.style.width = `${(rtVideo.currentTime / rtVideo.duration) * 100}%`;
+        });
+        rtSound?.addEventListener('click', () => {
+          rtVideo.muted = !rtVideo.muted; rtSound.setAttribute('aria-pressed', String(!rtVideo.muted));
+          rtSound.setAttribute('aria-label', rtVideo.muted ? 'Sound on' : 'Sound off'); if (rtVideo.paused) rtVideo.play().catch(() => {});
+        });
+        // play only while on screen
+        new IntersectionObserver(([e]) => { if (e.isIntersecting) rtVideo.play().catch(() => {}); else rtVideo.pause(); }, { threshold: 0.25 }).observe(rtVideo);
+      }
       const toggle = document.getElementById('nav-toggle')!;
       const setOpen = (open: boolean) => { header.classList.toggle('nav-open', open); toggle.setAttribute('aria-expanded', String(open)); };
       toggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
