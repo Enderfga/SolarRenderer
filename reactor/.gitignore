@@ -3,7 +3,7 @@ __pycache__/
 .ruff_cache/
 demo/node_modules/
 demo/dist/
+demo/.env.local
 .venv/
 weights/
 schema.json
-!demo/public/examples/highway/structure.mp4

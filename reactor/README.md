@@ -92,6 +92,10 @@ npm ci
 npm run dev -- --host 127.0.0.1
 ```
 
+Vite reads the example inputs directly from this repository's
+`examples/sem-highway_synthwave/` directory and includes them in production builds.
+No sample path configuration is needed.
+
 Open http://localhost:5173. The default Runtime address is http://localhost:8080;
 set `VITE_RUNTIME_URL` before starting the demo to use another local endpoint.
 Click **Connect**, choose **Synthwave Highway** to fill the official video, image

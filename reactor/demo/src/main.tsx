@@ -148,7 +148,7 @@ function Workspace() {
       <p>Choose a recorded structure video, an optional aligned appearance image, and the six-part rendering prompt.</p>
       <p className="eyebrow">01 / TRY AN EXAMPLE</p>
       <div className="example-grid" role="group" aria-label="Example inputs">{examples.map(example=><button key={example.id} className={`example-card ${selectedExample===example.id ? "selected" : ""}`} aria-label={`Select ${example.title}`} aria-pressed={selectedExample===example.id} disabled={busy || Boolean(status?.active)} onClick={()=>void perform(()=>selectExample(example.id))}>
-        <img src={`${import.meta.env.BASE_URL}examples/highway/${example.thumbnail}`} alt=""/><strong>{example.title}</strong><small>{example.detail}</small>
+        <img src={example.thumbnail} alt=""/><strong>{example.title}</strong><small>{example.detail}</small>
       </button>)}</div>
       <p className="example-note">One official scene, two tested input modes. Click to fill the inputs, then press Start. Nothing starts automatically.</p>
       <p className="eyebrow">02 / INPUTS · EDIT OR UPLOAD YOUR OWN</p>
