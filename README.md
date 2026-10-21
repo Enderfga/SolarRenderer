@@ -4,7 +4,7 @@
 
 <p align="center">
   🌐 <a href="https://enderfga.cn/SolarRenderer">Project Page</a> •
-  📄 <a href="https://enderfga.cn/data/solarrenderer.pdf">Paper</a> •
+  📄 <a href="https://arxiv.org/abs/2610.28630">Paper</a> •
   🤗 <a href="https://huggingface.co/Enderfga/SolarRenderer">Weights</a> •
   🤗 <a href="https://huggingface.co/datasets/Enderfga/SolarRenderer-Data">Data</a> •
   💻 <a href="https://github.com/Enderfga/SolarRenderer/tree/data">Data code</a>
@@ -103,13 +103,15 @@ guide for SSH/WebRTC networking and the fixed-prompt, finite-video behavior.
 If you use SolarRenderer in your research, please cite SolarRenderer and SolarWM, the framework on which it is built.
 
 ```bibtex
-@article{fang2026solarrenderer,
+@misc{fang2026solarrenderer,
   title  = {SolarRenderer: Few-Step Generative Reference Rendering},
   author = {Fang, Guian and Qian, Shengju and Lu, Dongyue and
             Huang, Junchao and Jiang, Lutao and Wang, Xin and
             Song, Yiren and Jiang, Li and Shou, Mike Zheng},
   year   = {2026},
-  url    = {https://enderfga.cn/data/solarrenderer.pdf}
+  eprint = {2610.28630},
+  archivePrefix = {arXiv},
+  url    = {https://arxiv.org/abs/2610.28630}
 }
 ```
 

@@ -73,7 +73,8 @@ python eval/summary.py --scores ./scores --methods solarrenderer,other --split h
 python eval/summary.py --scores ./scores --methods solarrenderer,other --split heldout
 ```
 
-On the released renders (`results/solarrenderer`) these commands give the paper's means; DOVER and VideoScore2 depend
+On the released renders (`results/solarrenderer`, and `results/solarrenderer_causal` for the causal variant) these
+commands give the paper's means; DOVER and VideoScore2 depend
 slightly on library versions (VideoScore2 generates its answer, so expect differences of about 0.02).
 
 Results are one JSON per case and metric, under `<out>/<metric>/<method>/hard/<case_id>.json` and
@@ -143,4 +144,14 @@ verdicts, the nine methods of the paper's main table give its Elo columns:
 python eval/elo.py ./SolarRenderer-Data/results/judge/hard/*.jsonl --split hard --methods solarrenderer,lynnreal_omni,\
 control_model_50step,official_backbone_50step,pai_controlnet_union,streaming_cwm,streamrender_h3,cosmos_transfer2_5,\
 wan2_2_vace_fun
+```
+
+The causal variant (`results/solarrenderer_causal`) is judged only against SolarRenderer. Adding its verdicts and
+`solarrenderer_causal` as a tenth method rates it and moves the other nine by a few points at most; shifting all ten
+ratings so that the other nine average 1000 gives its row in the paper:
+
+```bash
+python eval/elo.py ./SolarRenderer-Data/results/judge/hard/*.jsonl --split hard --methods solarrenderer,lynnreal_omni,\
+control_model_50step,official_backbone_50step,pai_controlnet_union,streaming_cwm,streamrender_h3,cosmos_transfer2_5,\
+wan2_2_vace_fun,solarrenderer_causal
 ```
