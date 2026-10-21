@@ -6,7 +6,7 @@
 
 <p align="center">
   🌐 <a href="https://enderfga.cn/SolarRenderer">Project Page</a> •
-  📄 <a href="https://enderfga.cn/data/solarrenderer.pdf">Paper</a> •
+  📄 <a href="https://arxiv.org/abs/2610.28630">Paper</a> •
   🤗 <a href="https://huggingface.co/Enderfga/SolarRenderer">Weights</a> •
   🤗 <a href="https://huggingface.co/datasets/Enderfga/SolarRenderer-Data">Data</a>
 </p>
@@ -58,11 +58,13 @@ see the [weights repository](https://huggingface.co/Enderfga/SolarRenderer).
 ## Citation
 
 ```bibtex
-@article{fang2026solarrenderer,
+@misc{fang2026solarrenderer,
   title  = {SolarRenderer: Few-Step Generative Reference Rendering},
   author = {Fang, Guian and Qian, Shengju and Lu, Dongyue and
             Huang, Junchao and Jiang, Lutao and Wang, Xin and
             Song, Yiren and Jiang, Li and Shou, Mike Zheng},
-  year   = {2026}
+  year   = {2026},
+  eprint = {2610.28630},
+  archivePrefix = {arXiv}
 }
 ```
