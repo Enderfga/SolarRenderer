@@ -80,23 +80,15 @@ Add `--causal` with the two causal LoRAs to stream the clip block by block
 - 🏋️ **Training** on one 8-GPU node ([guide](docs/training.md)).
 - 📊 **Benchmark scoring** ([guide](eval/README.md)).
 
-## Inference with Reactor Runtime
+## Ways to run
 
-The [Reactor integration](reactor/README.md) provides a streaming inference service
-and a browser demo for a structure video, optional appearance reference, and prompt.
-The guide includes four-B200 validation results and deployment limitations.
-After preparing the licensed weights as described in that guide:
+| | For | Start here |
+|---|---|---|
+| **Reference script** | The reference implementation: one GPU, a clip at a time | `scripts/render.py` above |
+| **ComfyUI** | A browser page and node workflows with no code; the low-memory workflow fits a 16 GB GPU (e.g. RTX 4090) | [`comfyui/`](comfyui/README.md) |
+| **Streaming on [Reactor](https://reactor.inc)** | The fastest path: a four-GPU streaming service with a browser demo, validated by the Reactor team on four B200 GPUs | [`reactor/`](reactor/README.md) |
 
-```bash
-cd reactor
-reactor build
-reactor run --gpus device=0,1,2,3 --shm-size 8g --port 8080 --weights ./weights
-```
-
-Check `http://localhost:8080/health`, then run `cd reactor/demo && npm ci && npm run dev`
-from another terminal at the repository root. Open http://localhost:5173, click
-**Connect**, select your inputs, and click **Start new video**. See the integration
-guide for SSH/WebRTC networking and the fixed-prompt, finite-video behavior.
+The Reactor integration is a community contribution; thanks to [Rising0321](https://github.com/Rising0321) and the Reactor team.
 
 ## Citation
 
