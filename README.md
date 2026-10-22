@@ -6,6 +6,7 @@
 
 <p align="center">
   🌐 <a href="https://enderfga.cn/SolarRenderer">Project Page</a> •
+  🎮 <a href="https://huggingface.co/spaces/Enderfga/SolarRenderer">Online Demo</a> •
   🤗 <a href="https://huggingface.co/Enderfga/SolarRenderer">Weights</a> •
   🤗 <a href="https://huggingface.co/datasets/Enderfga/SolarRenderer-Data">Data</a>
 </p>

@@ -90,7 +90,7 @@ const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'),
       <a class="nav-lab" href="https://sites.google.com/view/showlab" target="_blank" rel="noreferrer" aria-label="Show Lab"><img class="lab-dark" src={asset('brand/showlab-dark.png')} alt="Show Lab" /><img class="lab-light" src={asset('brand/showlab-light.png')} alt="" aria-hidden="true" /></a>
     </header>
     <main id="main">
-      <div id="home"><Hero tiles={heroTiles} title={paper.title} paperUrl={paper.paperPath || undefined} datasetUrl={paper.datasetUrl} codeUrl={paper.codeUrl} weightsUrl={paper.weightsUrl} client:load /></div>
+      <div id="home"><Hero tiles={heroTiles} title={paper.title} paperUrl={paper.paperPath || undefined} datasetUrl={paper.datasetUrl} codeUrl={paper.codeUrl} weightsUrl={paper.weightsUrl} demoUrl={paper.demoUrl} client:load /></div>
 
       <section id="film" class="block dark-section film-section">
         <div class="wide-width">
@@ -242,7 +242,7 @@ const ogImage = Astro.site ? new URL(media('media/film/solarrenderer-film.jpg'),
         <div class="footer-brand">
           <a class="wordmark footer-logo" href="#home"><img src={asset('brand/solar-ring-96.png')} alt="" /><b><span>Solar</span>Renderer</b></a>
           <p>{paper.tagline}</p>
-          <div class="footer-links"><a href={paper.codeUrl} target="_blank" rel="noreferrer">Code</a><a href={paper.weightsUrl} target="_blank" rel="noreferrer">Weights</a><a href={paper.datasetUrl} target="_blank" rel="noreferrer">Data</a><a href="#paper">Citation</a></div>
+          <div class="footer-links"><a href={paper.demoUrl} target="_blank" rel="noreferrer">Demo</a><a href={paper.codeUrl} target="_blank" rel="noreferrer">Code</a><a href={paper.weightsUrl} target="_blank" rel="noreferrer">Weights</a><a href={paper.datasetUrl} target="_blank" rel="noreferrer">Data</a><a href="#paper">Citation</a></div>
         </div>
         <div class="footer-authors">
           <h2>Authors</h2>

@@ -72,6 +72,7 @@
   "paperPath": "https://arxiv.org/abs/2610.28630",
   "codeUrl": "https://github.com/Enderfga/SolarRenderer",
   "weightsUrl": "https://huggingface.co/Enderfga/SolarRenderer",
+  "demoUrl": "https://huggingface.co/spaces/Enderfga/SolarRenderer",
   "datasetUrl": "https://huggingface.co/datasets/Enderfga/SolarRenderer-Data",
   "contact": "guianfang@u.nus.edu",
   "bibtex": "@misc{fang2026solarrenderer,\n  title  = {SolarRenderer: Few-Step Generative Reference Rendering},\n  author = {Fang, Guian and Qian, Shengju and Lu, Dongyue and\n            Huang, Junchao and Jiang, Lutao and Wang, Xin and\n            Song, Yiren and Jiang, Li and Shou, Mike Zheng},\n  year   = {2026},\n  eprint = {2610.28630},\n  archivePrefix = {arXiv}\n}"
